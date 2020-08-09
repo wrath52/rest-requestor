@@ -1,0 +1,18 @@
+{
+  "keywords": [],
+  "license": "ISC",
+  "version": "1.0.0",
+  "name": "smart-fetch",
+  "author": "Egor Kalianov",
+  "dependencies": {
+    "typescript": "^3.9.7"
+  },
+  "homepage": "https://github.com/wrath52/smart-fetch#readme",
+  "bugs": {
+    "url": "https://github.com/wrath52/smart-fetch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wrath52/smart-fetch.git"
+  }
+}

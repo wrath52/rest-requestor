@@ -2,7 +2,7 @@ interface IObjectStrings {
   [key: string]: string;
 }
 
-export interface RequestOptions {
+export interface IOptions {
   body?: BodyInit;
   isBlob?: boolean;
   headers?: HeadersInit;
@@ -30,7 +30,7 @@ class SmartFetch {
     this.BASE_URL = b;
   }
 
-  getQueryValue(key: string, value: string) {
+  getQueryValue(key: string, value: string): string {
     if (Array.isArray(value)) {
       return value.map((val) => this.getQueryValue(key, val)).join("&");
     }
@@ -54,7 +54,7 @@ class SmartFetch {
     return res;
   }
 
-  async execute(pathname: string, options) {
+  async execute(pathname: string, options: IOptions) {
     const {
       done,
       body,
@@ -75,7 +75,7 @@ class SmartFetch {
       path += `?${this.getQuery(query)}`;
     }
 
-    const requestOptions: RequestOptions = {
+    const requestOptions: IOptions = {
       body,
       method: "GET",
       headers: {
