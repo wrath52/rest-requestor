@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "strict": true,
-    "outDir": "build",
-    "target": "es2015",
+    "target": "es5",
+    "outDir": "dist",
+    "rootDir": "source",
     "module": "commonjs",
+
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "types": []
+    "experimentalDecorators": true
   },
-  "include": ["index.ts"],
   "exclude": ["node_modules"]
 }
