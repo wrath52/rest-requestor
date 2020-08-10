@@ -2,18 +2,18 @@
   "keywords": [],
   "license": "ISC",
   "version": "1.0.0",
-  "name": "smart-fetch",
+  "name": "rest-requestor",
   "author": "Egor Kalianov",
   "dependencies": {
     "node-fetch": "^2.6.0",
     "typescript": "^3.9.7"
   },
-  "homepage": "https://github.com/wrath52/smart-fetch#readme",
+  "homepage": "https://github.com/wrath52/rest-requestor#readme",
   "bugs": {
-    "url": "https://github.com/wrath52/smart-fetch/issues"
+    "url": "https://github.com/wrath52/rest-requestor/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wrath52/smart-fetch.git"
+    "url": "git+https://github.com/wrath52/rest-requestor.git"
   }
 }
