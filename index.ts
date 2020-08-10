@@ -1,3 +1,12 @@
+// @ts-ignore
+let fetch = require("node-fetch").default;
+
+try {
+  if (!window) ({ fetch } = window);
+} catch (error) {
+  console.log("window is not defined");
+}
+
 interface IObjectStrings {
   [key: string]: string;
 }

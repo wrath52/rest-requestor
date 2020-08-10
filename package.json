@@ -5,6 +5,7 @@
   "name": "smart-fetch",
   "author": "Egor Kalianov",
   "dependencies": {
+    "node-fetch": "^2.6.0",
     "typescript": "^3.9.7"
   },
   "homepage": "https://github.com/wrath52/smart-fetch#readme",
