@@ -8,7 +8,7 @@ try {
 }
 
 class RestRequestor {
-  private BASE_URL: string;
+  private _baseUrl: string;
 
   private successStatuses = [200];
 
@@ -17,8 +17,8 @@ class RestRequestor {
     504: "Превышено время ожидания ответа от сервера",
   };
 
-  constructor(b: string) {
-    this.BASE_URL = b;
+  constructor(baseUrl: string) {
+    this._baseUrl = baseUrl;
   }
 
   getQueryValue(key: string, value: string): string {
@@ -60,7 +60,7 @@ class RestRequestor {
     } = options;
 
     let status;
-    let path = `${isAbsolutePath ? "" : this.BASE_URL}${pathname}`;
+    let path = `${isAbsolutePath ? "" : this._baseUrl}${pathname}`;
 
     if (query && Object.keys(query).length) {
       path += `?${this.getQuery(query)}`;
