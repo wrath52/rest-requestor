@@ -68,8 +68,8 @@ class RestRequestor {
 
     let response: Blob | object = { status: "Development request error" };
     const requestOptions: IOptions = {
-      body,
       method: "GET",
+      body: body ? JSON.stringify(body) : undefined,
       headers: {
         "Content-Type": "application/json",
         ...(headers || {}),
