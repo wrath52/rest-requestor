@@ -22,10 +22,14 @@ const Requestor = new RestRequestor(BASE_URL);
 ## Выполнение запросов
 
 ```
-const response = await Requestor.execute("/news"); // "GET"
-const response = await Requestor.execute("/news", {method: "DELETE"}); // "DELETE"
-const response = await Requestor.execute("/news", {method: "PUT", body: {}}); // "PUT"
-const response = await Requestor.execute("/news", {method: "POST", body: {}}); // "POST"
+// "GET"
+const response = await Requestor.execute("/news");
+// "DELETE"
+const response = await Requestor.execute("/news", {method: "DELETE"});
+// "PUT"
+const response = await Requestor.execute("/news", {method: "PUT", body: {}});
+// "POST"
+const response = await Requestor.execute("/news", {method: "POST", body: {}});
 ```
 
 ## Коллбэки
