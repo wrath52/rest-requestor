@@ -13,7 +13,7 @@ yarn add rest-requestor
 ## Инициализация
 
 ```
-import RestRequestor from "../source/index";
+import RestRequestor from "rest-requestor";
 
 const BASE_URL = "/api";
 const Requestor = new RestRequestor(BASE_URL);
@@ -22,10 +22,10 @@ const Requestor = new RestRequestor(BASE_URL);
 ## Выполнение запросов
 
 ```
-const response = await Requestor.execute("/news");
-const response = await Requestor.execute("/news", {method: "DELETE"});
-const response = await Requestor.execute("/news", {method: "PUT", body: {}});
-const response = await Requestor.execute("/news", {method: "POST", body: {}});
+const response = await Requestor.execute("/news"); // "GET"
+const response = await Requestor.execute("/news", {method: "DELETE"}); // "DELETE"
+const response = await Requestor.execute("/news", {method: "PUT", body: {}}); // "PUT"
+const response = await Requestor.execute("/news", {method: "POST", body: {}}); // "POST"
 ```
 
 ## Коллбэки
