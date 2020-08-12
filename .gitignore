@@ -1,5 +1,6 @@
 # project
 dist
+test/build
 
 # node.js
 node_modules

@@ -45,7 +45,7 @@ class RestRequestor {
     return res;
   }
 
-  async execute(pathname: string, options: IOptions) {
+  async execute(pathname: string, options: IOptions = {}) {
     const {
       done,
       body,
@@ -66,6 +66,7 @@ class RestRequestor {
       path += `?${this.getQuery(query)}`;
     }
 
+    let response: Blob | object = { status: "Development request error" };
     const requestOptions: IOptions = {
       body,
       method: "GET",
@@ -77,7 +78,6 @@ class RestRequestor {
 
     try {
       const request = await fetch(path, requestOptions);
-      let response: Blob | object = { status: "Development request error" };
 
       if (isBlob) response = await request.blob();
       else response = await request.json();
@@ -91,12 +91,13 @@ class RestRequestor {
       if (isSuccessStatus) {
         if (success) await success(response, status);
       } else {
-        if (failed) return failed(response, status);
-
-        for (const key in errorsStatuses) {
-          if (errorsStatuses.hasOwnProperty(key)) {
-            if (Number(status) === Number(key)) {
-              console.error(path, errorsStatuses[key]);
+        if (failed) failed(response, status);
+        else {
+          for (const key in errorsStatuses) {
+            if (errorsStatuses.hasOwnProperty(key)) {
+              if (Number(status) === Number(key)) {
+                console.error(path, errorsStatuses[key]);
+              }
             }
           }
         }
@@ -108,6 +109,8 @@ class RestRequestor {
       if (done) done({ message: "error fetch" }, 500);
       console.log(`ERROR API REQUEST: ${path} ${status}`);
     }
+
+    return response;
   }
 }
 
