@@ -1,7 +1,7 @@
 ## Установка
 
 ```
-npm add rest-requestor
+npm install rest-requestor
 ```
 
 или
