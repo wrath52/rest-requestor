@@ -56,6 +56,7 @@ class RestRequestor {
       headers,
       success,
       isAbsolutePath,
+      withOutputError,
       successStatuses,
     } = options;
 
@@ -106,6 +107,7 @@ class RestRequestor {
       if (done) done(response, status);
       return response;
     } catch (error) {
+      if (withOutputError) console.log(error);
       if (done) done({ message: "error fetch" }, 500);
       console.log(`ERROR API REQUEST: ${path} ${status}`);
     }

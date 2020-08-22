@@ -9,6 +9,7 @@ export interface IOptions {
   query?: IObjectStrings;
   errors?: IObjectStrings;
   isAbsolutePath?: boolean;
+  withOutputError?: boolean;
   successStatuses?: number[];
   method?: "GET" | "POST" | "PUT" | "DELETE";
   done?: (response: any, status: number) => void;
