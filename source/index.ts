@@ -19,6 +19,7 @@ class RestRequestor {
 
   constructor(baseUrl: string) {
     this._baseUrl = baseUrl;
+    this.execute = this.execute.bind(this);
   }
 
   getQueryValue(key: string, value: string): string {
